@@ -5,23 +5,26 @@ angular.module('bpApp')
     $scope.status = [];
     $scope.last_updated = [];
     $scope.messages=[];
-    $scope.showSpinner=true;
+    $scope.showSpinner1=true;
+    $scope.showSpinner2=true;
     
     $scope.getinfo= function() {
-    	$scope.showSpinner=true;	
+    	$scope.showSpinner1=true;
+    	$scope.showSpinner2=true;
 		$http({
 			url : "http://localhost:9000/status",
 			method : "GET",
 		}).success( function(data) {
-				$scope.status = data.status;
-				$scope.last_updated = data.last_updated;
-				$http({
-					url : "http://localhost:9000/messages",
-					method : "GET",
-				}).success( function(data) {
-					$scope.messages=data;
-					$scope.showSpinner=false;
-				})
+			$scope.status = data.status;
+			$scope.last_updated = data.last_updated;
+			$scope.showSpinner1=false;
+		})
+		$http({
+			url : "http://localhost:9000/messages",
+			method : "GET",
+		}).success( function(data) {
+			$scope.messages=data;
+			$scope.showSpinner2=false;
 		})
     	
     }
@@ -29,3 +32,5 @@ angular.module('bpApp')
     $scope.getinfo();
 
   });
+
+

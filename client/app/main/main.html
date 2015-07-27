@@ -13,9 +13,9 @@
 <div align="center">
 <button ng-click="getinfo()" type="button" class="btn">Refresh!</button>
 <br>
-<img ng-show="showSpinner===true" src = "assets/images/loading_spinner3.gif">
+<img ng-show="showSpinner1===true && showSpinner2===true" src = "assets/images/loading_spinner3.gif">
 
-<div ng-hide="showSpinner===true">
+<div ng-hide="showSpinner1===true && showSpinner2===true">
 <br>
 <br>
 <h3> <b>current status:</b> <i>{{status}}</i> <br><br>

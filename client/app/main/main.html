@@ -1,0 +1,30 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+  	<br>
+  	<br>
+  	<br>
+    <h1>GitHub Status</h1>
+    <p class="lead"></p>
+    <img src="assets/images/github.png">
+  </div>
+</header>
+<br>
+<br>
+<div align="center">
+<button ng-click="getinfo()" type="button" class="btn">Refresh!</button>
+<br>
+<img ng-show="showSpinner===true" src = "assets/images/loading_spinner3.gif">
+
+<div ng-hide="showSpinner===true">
+<br>
+<br>
+<h3> <b>current status:</b> <i>{{status}}</i> <br><br>
+ <b>availability:</b>  <br> </h3>
+<div ng-repeat="message in messages">
+<h3> {{message.created_on}}: <i>{{message.status}}</i>: {{message.body}}</h3>
+</div>
+</div>
+</div>
+
+
+
